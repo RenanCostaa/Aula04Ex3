@@ -12,7 +12,6 @@ Deseja-se saber:
 - O total de votos em branco;
 - O total de votos nulos;
 */
-
 class MainClass {
   public static void exibe(){
     Console.WriteLine("--- Lista de Candidatos ---");
@@ -24,7 +23,6 @@ class MainClass {
     Console.WriteLine("");
     Console.WriteLine("Selecione seu candidato utlizando seu numero");
   }
-
   public static (int, int, int, int, int) computa(){
     int cand,jose=0,joana=0,roberto=0,branco=0,nulo=0;
     bool parar=false;
@@ -70,7 +68,6 @@ class MainClass {
     //Console.Write("{0},{1},{2},{3},{4}",jose,joana,roberto,branco,nulo);
     return (jose,joana,roberto,branco,nulo);
   }
-
   public static void calcula(int cand1, int cand2, int cand3, int bco, int nul){
     if (cand1>cand2 && cand1>cand3){
       Console.WriteLine("O Candidato vencedor foi **José Couve** ");
@@ -90,6 +87,5 @@ class MainClass {
     exibe();
     (a,b,c,d,e) = computa();
     calcula(a,b,c,d,e);
-
   }
 }
