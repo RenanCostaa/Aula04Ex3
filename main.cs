@@ -15,20 +15,26 @@ Deseja-se saber:
 
 class MainClass {
 
-  public static void entraDados(){
+  public static void exibe(){
     Console.WriteLine("--- Lista de Candidatos ---");
     Console.WriteLine("33 - José Couve");
     Console.WriteLine("25 - Joana Bravo");
     Console.WriteLine("10 - Roberto Nove");
     Console.WriteLine("0  - Voto branco");
     Console.WriteLine("4  - Voto nulo");
-    Console.ReadLine();
-    Console.Clear();
-    Console.ReadLine();
+    Console.WriteLine("");
+    Console.WriteLine("Selecione seu candidato utlizando seu numero");
   }
   public static void votacao(){
-
-  }
+    int cand;
+    bool parar=false
+    do{
+      exibe();
+      Console.WriteLine("Digite o codigo do candidato: ");
+      cand=int.Parse(Console.ReadLine());
+      Console.WriteLine("Votar novamente? (s/n) ");
+      teste=Console.ReadLine();
+    }while(parar==false);
 
 
   public static void Main () {
