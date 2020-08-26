@@ -26,7 +26,7 @@ class MainClass {
   }
 
   public static void Main () {
-    int cand;
+    int cand,jose=0,joana=0,roberto=0,branco=0,nulo=0;
     bool parar=false;
     string teste;
 
@@ -36,13 +36,38 @@ class MainClass {
       Console.WriteLine("Digite o codigo do candidato: ");
       cand=int.Parse(Console.ReadLine());
 
+      switch (cand){
+        
+
+        case 33:
+          jose= jose+1;
+          break;
+
+        case 25:
+          joana=joana+1;
+          break;
+
+        case 10:
+          roberto=roberto+1;
+          break;
+
+        case 0:
+          branco=branco+1;
+          break;
+
+        case 4:
+          nulo=nulo+1;
+          break;
+
+      }
+
+      Console.WriteLine("---- Computado ----");
       Console.WriteLine("Votar novamente? (s/n) ");
       teste=Console.ReadLine();
       if (teste=="n"){
         parar=true;
       }
-
     }while(parar==false);
-
+    Console.Write("{0},{1},{2},{3},{4}",jose,joana,roberto,branco,nulo);
   }
 }
