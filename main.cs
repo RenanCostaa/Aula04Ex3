@@ -14,7 +14,6 @@ Deseja-se saber:
 */
 
 class MainClass {
-
   public static void exibe(){
     Console.WriteLine("--- Lista de Candidatos ---");
     Console.WriteLine("33 - José Couve");
@@ -25,19 +24,25 @@ class MainClass {
     Console.WriteLine("");
     Console.WriteLine("Selecione seu candidato utlizando seu numero");
   }
-  public static void votacao(){
+
+  public static void Main () {
     int cand;
-    bool parar=false
+    bool parar=false;
+    string teste;
+
     do{
+      Console.Clear();
       exibe();
       Console.WriteLine("Digite o codigo do candidato: ");
       cand=int.Parse(Console.ReadLine());
+
       Console.WriteLine("Votar novamente? (s/n) ");
       teste=Console.ReadLine();
+      if (teste=="n"){
+        parar=true;
+      }
+
     }while(parar==false);
-
-
-  public static void Main () {
 
   }
 }
