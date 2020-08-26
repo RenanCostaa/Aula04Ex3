@@ -25,7 +25,7 @@ class MainClass {
     Console.WriteLine("Selecione seu candidato utlizando seu numero");
   }
 
-  public static void Main () {
+  public static (int, int, int, int, int) computa(){
     int cand,jose=0,joana=0,roberto=0,branco=0,nulo=0;
     bool parar=false;
     string teste;
@@ -38,7 +38,6 @@ class MainClass {
 
       switch (cand){
         
-
         case 33:
           jose= jose+1;
           break;
@@ -60,14 +59,37 @@ class MainClass {
           break;
 
       }
-
-      Console.WriteLine("---- Computado ----");
+      Console.WriteLine("---- Voto Computado ----");
       Console.WriteLine("Votar novamente? (s/n) ");
+      
       teste=Console.ReadLine();
       if (teste=="n"){
         parar=true;
       }
     }while(parar==false);
-    Console.Write("{0},{1},{2},{3},{4}",jose,joana,roberto,branco,nulo);
+    //Console.Write("{0},{1},{2},{3},{4}",jose,joana,roberto,branco,nulo);
+    return (jose,joana,roberto,branco,nulo);
+  }
+
+  public static void calcula(int cand1, int cand2, int cand3, int bco, int nul){
+    if (cand1>cand2 && cand1>cand3){
+      Console.WriteLine("O Candidato vencedor foi **José Couve** ");
+    }
+    if (cand2>cand1 && cand2>cand3){
+      Console.WriteLine("O Candidato vencedor foi **Joana Bravo** ");
+    }
+    if (cand3>cand1 && cand3>cand2){
+      Console.WriteLine("O Candidato vencedor foi **Roberto Nove** ");
+    }
+    Console.WriteLine("Total de votos brancos foi de {0} !",bco);
+    Console.WriteLine("Total de votos nulos foi de {0} !",nul);
+
+  }
+  public static void Main () {
+    int a,b,c,d,e;
+    exibe();
+    (a,b,c,d,e) = computa();
+    calcula(a,b,c,d,e);
+
   }
 }
